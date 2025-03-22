@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>237025 Taufiqurrahman</title>
+</head>
+<style>
+    li{
+        float: left;
+        text-align: center;
+        margin-right: 3px;
+    }
+    ul{
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    li.dropdown{
+        display: inline-block;
+    }
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        width: 80px;
+        z-index: 1;
+    }
+    .dropdown:hover .dropdown-content{
+        display: block;
+    }
+    a{
+        display: block;
+        border-style: dotted;
+        border-color: gray;
+        width: 80px;
+        padding: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    li a:hover{
+        background-color: black;
+        color: white;
+    }
+    
+</style>
+<body>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li class="dropdown">
+            <a href="#news">News</a>
+                <div class="dropdown-content">
+                    <a href="#sport">Sport</a>
+                    <a href="#music">Music</a>
+                    <a href="#movie">Movie</a>
+                </div>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</body>
+</html>
