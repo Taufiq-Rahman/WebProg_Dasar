@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373025 Taufiqurrahman</title>
+</head>
+<style>
+    #piramida{
+        width: 800px;
+        height: 600px;
+        text-align: center;
+    }
+    .baris{
+        margin-bottom: 0px;
+    }
+    .kotak{
+        width: 40px;
+        height: 40px;
+        background-color: orange;
+        display: inline-block;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin: 2px;
+    }
+</style>
+<body>
+    <h2>Membuat Piramida Sederhana</h2>
+    <p>Tinggi Piramida : <input type="text" id="tinggiPiramid" ></p>
+    <button onclick="ProsesHitung()">Proses</button>
+    <div id="piramida"></div>
+
+    <script type="text/javascript">
+        function ProsesHitung(){
+            let tinggi = document.getElementById("tinggiPiramid").value;
+            let piramida = document.getElementById("piramida");
+            piramida.innerHTML = "";
+
+            if (isNaN(tinggi) || tinggi <= 0){
+                    alert("Masukkan tinggi piramid yang valid");
+                    return;
+            }
+
+            let a = parseInt(tinggi);
+            for (let index = 0; index < a; index++) {
+                let baris = document.createElement("div");
+                baris.className = "baris";
+
+                for (let j = 0; j < index; j++) {
+                    let kotak = document.createElement("div");
+                    kotak.className = "kotak";
+                    baris.appendChild(kotak);
+                }
+                piramida.appendChild(baris);
+            }
+        }
+        
+    </script>
+</body>
+</html>

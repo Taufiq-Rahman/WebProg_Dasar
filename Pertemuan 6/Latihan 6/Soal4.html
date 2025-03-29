@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373025 Taufiqurrahman</title>
+</head>
+<style>
+    table, tr, td{
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+<body>
+    <table>
+        <tr>
+            <td style="color:  blue;">Input:</td>
+            <td><input type="number" id="input"></td>
+        </tr>
+        <tr>
+            <td style="color: blue;">Output:</td>
+            <td><input type="number" id="output"></td>
+        </tr>
+        <tr >
+            <td colspan="2">
+                <select id="jenisKonversi" >
+                    <option value="decimal-biner">decimal-biner</option>
+                    <option value="biner-decimal">biner-decimal</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="proses()">PROSES</button>
+                <button onclick="reset()">RESET</button>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        function proses(){
+            let input = document.getElementById("input").value;
+            let konversi = document.getElementById("jenisKonversi").value;
+            let output = document.getElementById("output");
+            
+            if (konversi === "decimal-biner") {
+                let decimal = parseInt(input);
+                if (isNaN(decimal) || decimal < 0 || decimal > 255) {
+                    alert("Masukkan angka dari 0 s/d 255!");
+                    return;
+                }
+                output.value = decimal.toString(2);
+            } else {
+                if (!isValidBinary(input)) {
+                    alert("Masukkan angka biner 1-8 digit (hanya 0 dan 1)!");
+                    return;
+                }
+                output.value = parseInt(input, 2);
+            }
+        }
+        function isValidBinary(input){
+            if(input.length < 1 || input.length > 8) return false;
+            for (let index = 0; index < input.length; index++) {
+                if(input[index] !== '0' && input[index] !== '1') return false;
+            }
+            return true;
+        }
+        function reset(){
+            document.getElementById("input").value="";
+            document.getElementById("output").value="";
+        }
+    </script>
+</body>
+</html>

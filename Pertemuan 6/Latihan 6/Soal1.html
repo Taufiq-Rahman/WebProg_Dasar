@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373025 Taufiqurrahman</title>
+</head>
+<style>
+    table, tr, td{
+        border: 1px solid black;
+    }
+    tr, td{
+        width: 10%;
+    }
+</style>
+<body>
+    <h2>Perhitungan Aritmatika</h2>
+    Angka Pertama 
+    <input type="text" id="angka 1"> <br>
+    Angka Kedua 
+    <input type="text" id="angka 2"> <br>
+    <button onclick="hitung()">Count</button>
+    
+    <table>
+        <tr>
+            <td id="angka1_tambah"></td>
+            <td>+</td>
+            <td id="angka2_tambah"></td>
+            <td>=</td>
+            <td id="hasil_tambah"></td>
+        </tr>
+        <tr>
+            <td id="angka1_kurang"></td>
+            <td>-</td>
+            <td id="angka2_kurang"></td>
+            <td>=</td>
+            <td id="hasil_kurang"></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        function hitung() {
+            let angka1 = document.getElementById("angka 1").value;
+            let angka2 = document.getElementById("angka 2").value;
+
+            if(isNaN(angka1) && isNaN(angka2)){
+                alert("Angka pertama dan angka kedua harus angka");
+                return;
+            } else if (isNaN(angka1)){
+                alert("Angka pertama bukan angka");
+                return;
+            } else if (isNaN(angka2)){
+                alert("Angka kedua harus angka");
+                return;
+            }
+
+            let a = parseInt(angka1);
+            let b = parseInt(angka2);
+
+            document.getElementById("angka1_tambah").innerHTML = a;
+            document.getElementById("angka2_tambah").innerHTML = b;
+            document.getElementById("hasil_tambah").innerHTML = a + b;
+
+            document.getElementById("angka1_kurang").innerHTML = a;
+            document.getElementById("angka2_kurang").innerHTML = b;
+            document.getElementById("hasil_kurang").innerHTML = a - b;
+        }
+    </script>
+</body>
+</html>

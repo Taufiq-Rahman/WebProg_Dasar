@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373025 Taufiqurrahman</title>
+</head>
+<style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h2>Tabel Perkalian</h2>
+    <table id="tabelPerkalian"></table>
+
+    <script type="text/javascript">
+        let angka = prompt("A number?")
+        while (isNaN(angka) || angka === "" || angka === null) {
+            alert("invalid number")
+            angka = prompt("A number?")
+        }
+
+        if (angka != null){
+            angka = parseInt(angka);
+            let table = document.getElementById("tabelPerkalian")
+
+            for (let index = 0; index < angka; index++) {
+                table.innerHTML += `<tr>
+                                     <td>${index}</td>
+                                     <td>x</td>
+                                     <td>${angka}</td>
+                                     <td>=</td>
+                                     <td>${index * angka}</td>
+                                  </tr>`;
+            }
+        }
+    </script>
+</body>
+</html>
