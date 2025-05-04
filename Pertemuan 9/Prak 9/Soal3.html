@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<style>
+    body{
+        font-family: monospace;
+    }
+    input,button, select{
+        margin: 5px;
+    }
+</style>
+<body>
+    Data 
+    <input type="text" id="inputdata"> <br>
+    <button onclick="addData()">Add</button>
+    <select id="operation" onchange="performOperation()">
+        <option value="">Pilih Operasi</option>
+        <option value="display">Display</option>
+        <option value="count">Count</option>
+        <option value="sum">Sum</option>
+        <option value="average">Average</option>
+        <option value="max">Max</option>
+        <option value="min">Min</option>
+        <option value="ganjil">Ganjil</option>
+        <option value="genap">Genap</option>
+        <option value="hapus">Hapus</option>
+    </select>
+    <br>
+    Hasil <input type="text" id="hasil" readonly/>
+
+    <script type="text/javascript">
+        var dataArray = [];
+    
+        function addData(){
+            var input = document.getElementById("inputdata").value;
+            var nilai = parseInt(input).value;
+
+            if (!isNaN(nilai)) {
+                dataArray.push(nilai);
+                input.value = "";
+            }
+        }
+
+        function performOperation() {
+            var Operasi = document.getElementById("operasi").value;
+            var hasil = "";
+
+            if (Operasi == "display") {
+                hasil = dataArray.join(", ");
+            } else if (Operasi = "count"){
+                hasil = dataArray.length;
+            } else if (Operasi = "sum"){
+                var total = 0;
+                for (var index = 0; index < dataArray.length; index++) {
+                   total += dataArray[index];
+                }
+                hasil = total;
+            } else if (Operasi = "average"){
+                if (dataArray.length > 0) {
+                    var total = 0;
+                    for (var index = 0; index < dataArray.length; index++) {
+                        total += dataArray[index];
+                    }
+                    hasil = total / dataArray.length;
+                } else {
+                    hasil = 0;
+                }
+            } else if (Operasi == "max"){
+                hasil = Math.max(...dataArray);
+            } else if (Operasi == "min"){
+                hasil = Math.min(...dataArray);
+            } else if (Operasi == "ganjil"){
+                var ganjil = [];
+                for (var index = 0; index < dataArray.length; index++) {
+                    if (dataArray[index] % 2 != 0) {
+                        ganjil.push(dataArray[index]);
+                    }
+                }
+                hasil = ganjil.join(", ")
+            } else if (Operasi == "genap"){
+                var genap = [];
+                for (var index = 0; index < dataArray.length; index++) {
+                    if (dataArray[index] % 2 == 0) {
+                        genap.push(dataArray[index]);
+                    }
+                }
+                hasil = genap.join(", ");
+            } else if (Operasi = "hapus"){
+                dataArray = [];
+                hasil = "Data Sudah Dihapus";
+            }
+            document.getElementById("hasil").value = hasil;
+        }
+        
+    </script>
+</body>
+</html>
