@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<style>
+    .color{
+        color: red;
+    }
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#input_text').on("keyup", function(){
+            var cariText = $(this).val().toLowerCase();
+            
+            $('.list_text div').each(function(){
+                var text = $(this).text().toLowerCase();
+                if(text.includes(cariText) && cariText !== ""){
+                    $(this).addClass("color");
+                }else{
+                    $(this).removeClass("color");
+                }
+            });
+        });
+    });
+</script>
+
+<body>
+    <input type="text" id="input_text">
+
+    <div class="list_text">
+        <div>Sun Microsystem</div>
+        <div>Apache Software Foundation</div>
+        <div>Oracle Coorporation</div>
+        <div>Internasional Bussiness Machines</div>
+        <div>Microsoft Coorporation</div>
+        <div>Apple Inc</div>
+        <div>Sap Ag</div>
+        <div>Accenture</div>
+        <div>Computer Sciences Coorporation</div>
+        <div>Google</div>
+        <div>Softbank</div>
+        <div>Yahoo</div>
+    </div>
+</body>
+</html>

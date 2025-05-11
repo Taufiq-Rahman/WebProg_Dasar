@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<style>
+    div{
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        display: inline-block;
+        border: 2px blue solid;
+        text-align: center;
+        cursor: pointer;
+    }
+    span{background-color: red;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("div").click(function(){
+            $(this).css("background-color", "red");
+            $(this).find("span").attr("id","merah");
+        })
+        $("button").click(function(){
+            $("div").each(function(index, domEle){
+                if($(domEle).find("span").attr("id") == "merah"){
+                    return false;
+                }else{
+                    $(domEle).css("background-color", "yellow");
+                }
+            })
+        })
+    });
+</script>
+<body>
+    <button>Change Color</button>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+    <div><span></span></div>
+</body>
+</html>

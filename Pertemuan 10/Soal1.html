@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<style>
+    #menu > li{
+        display: inline-block;
+        background-color: hotpink;
+        margin-right: 5px;
+        position: relative;
+        padding: 5px 10px;
+        cursor: pointer;
+        color: white;
+        text-decoration: underline;
+    }
+    a{
+        display: block;
+        background-color: white;
+        text-decoration: underline;
+        color: black;
+    }
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('a').hide();
+
+        $('#menu > li').hover(function(){
+            $('a').hide();
+            $(this).children('a').show();
+        },function(){});
+    });
+</script>
+<body>
+    <ol id="menu">
+        <li Class="kotak1">
+            JQuery
+                <a href="">Download</a>
+                <a href="">Documentation</a>
+                <a href="">Blog</a>
+        </li>
+        <li Class="kotak1">
+            Community
+                <a href="">Mailing List</a>
+                <a href="">Tutorials</a>
+                <a href="">Demos</a>
+                <a href="">Plugins</a>
+        </li>
+        <li Class="kotak1">
+            Development
+                <a href="">Source Code</a>
+                <a href="">Bug Tracking</a>
+                <a href="">Recent Changes</a>
+
+        </li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#add-button').click(function(){
+            var nama_baru = $('#input_nama').val().trim();
+            $('<div>'+ nama_baru + '<div>').appendTo('#list_nama');
+                $('#input_nama').val('');
+        });
+
+        $('#search-button').click(function(){
+                var cari_nama = $('#input_nama').val().trim();
+               $('#list_nama div').css("text-decoration","none");
+               if(cari_nama !==""){
+                    $("#list_nama div:contains('"+ cari_nama +"')").css("text-decoration","underline");
+               }
+        });
+    });
+</script>
+<body>
+    <input type="text" id="input_nama" placeholder="Nama">
+    <button id="add-button">Add</button>
+    <button id="search-button">Search</button>
+
+    <div id="list_nama">
+        <div>John Resig</div>
+        <div>George Martin</div>
+        <div>Malcom John Sinclair</div>
+        <div>J. Ohn</div>
+    </div>
+</body>
+</html>
