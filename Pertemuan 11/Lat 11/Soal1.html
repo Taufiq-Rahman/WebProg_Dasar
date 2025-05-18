@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<style>
+    .Container{
+        border: 2px solid ;
+        width: 20%;
+        height: 30%;
+        padding: 10px;
+    }
+    table{
+        border: 1px solid;
+        background-color: black; 
+        color: white;
+        border-collapse: collapse;
+    }
+    th, td{
+        border: 1px solid;
+        padding: 8px;
+        text-align: center;
+    }
+    tbody tr:nth-child(odd){
+        background-color: #FFFFCC;
+    }
+    tbody tr:nth-child(even){
+        background-color: #CCFFAA;
+    }
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+     $(document).ready(function(){
+            $("#btnsrc").click(function(){
+                let valueKelas = $(":radio[name='Kelas']:checked").val();
+                let url = "";
+
+                if(valueKelas === "checkALL"){
+                    url = "./nilai.json";
+                } else if(valueKelas === "checkA"){
+                    url = "./nilaiA.json";
+                } else if(valueKelas === "checkB"){
+                    url = "./nilaiB.json";
+                }
+
+                $.getJSON(url, function(data){
+                    $("#mytabel tbody").empty();
+                    $.each(data.nilai, function(){
+                        $("#mytabel tbody").append(
+                            "<tr>" +
+                                "<td>"+ this.nrp +"</td>" +
+                                "<td>"+ this.nama +"</td>" +
+                                "<td>"+ this.kelas +"</td>" +
+                                "<td>"+ this.nilaiakhir +"</td>" +
+                            "</tr>"
+                        );
+                    });
+                });
+            });
+        });
+</script>
+<body>
+    <div>
+        <h3>Selamat! Berikut adalah Daftar Mahasiswa yang mendapat <br>
+            Nila A Pemrograman Web SI Tahun Ajaran 2023/2024
+        </h3>
+    </div>
+    <div class="Container">
+        <input type="radio" name="Kelas" id="checkALL" value="checkALL" checked>
+        <label for="checkALL">ALL</label> <br>
+        <input type="radio" name="Kelas" id="checkA" value="checkA">
+        <label for="checkA">Kelas A</label><br>
+        <input type="radio" name="Kelas" id="checkB" value="checkB">
+        <label for="checkB">Kelas B</label><br>
+        <button id="btnsrc">Search</button>
+    </div><br>
+    <table  id="mytabel">
+        <thead>
+            <th>NRP</th>
+            <th>Nama</th>
+            <th>Kelas</th>
+            <th>Nilai Akhir</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

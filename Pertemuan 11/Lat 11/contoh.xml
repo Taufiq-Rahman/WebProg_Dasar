@@ -1,0 +1,17 @@
+<?xml-stylesheet type="text/css" href="style.css"?>
+<CATALOG>
+    <CD>
+        <TITLE>Empire Burlesque</TITLE>
+        <ARTIST>Bob Dylan</ARTIST>
+        <COUNTRY>USA</COUNTRY>
+        <COMPANY>Columbia</COMPANY>
+        <PRICE>10.90</PRICE>
+        <YEAR>1985</YEAR>
+    </CD>
+    <student>
+        <name>Taufiqurrahman</name>
+        <nrp>2373025</nrp>
+        <jurusan>Sistem Informasi</jurusan>
+        <jalan>Jl.Muhammad 277/65</jalan>
+    </student>
+</CATALOG>

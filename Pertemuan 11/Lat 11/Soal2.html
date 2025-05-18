@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taufiqurrahman 2373025</title>
+</head>
+<style>
+    .container {
+        border: 2px solid black;
+        width: 500px;
+        padding: 10px;
+    }
+    table, tr, td{
+        border: 1px solid black;
+        width: 500px;
+    }
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#look").click(
+            jQuery.get("./SIJson.txt", function(txt){
+                $('#output').text(txt);
+            })
+        )
+    })
+</script>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td>Title</td>
+            </tr>
+            <tr>
+                <td>Content</td>
+            </tr>
+            <tr>
+                <td>Generator</td>
+            </tr>
+        </table><br>
+        <button id="look">Look</button>
+        <div id="output"></div>
+    </div>
+</body>
+</html>
